@@ -75,10 +75,14 @@ export default class Color {
     }
 
     updateStyleString() {
+
         this.__styleString = 'rgba(' + Math.floor( this.r * 255 ) + ',' + Math.floor( this.g * 255 ) + ',' + Math.floor( this.b * 255 ) + ',' + this.a + ')';
+    
     }
 
     toString() {
+
         return 'MTHREE ( r: ' + this.r + ', g: ' + this.g + ', b: ' + this.b + ', a: ' + this.a + ', hex: ' + this.hex + ' )';
+    
     }
 } 

@@ -416,7 +416,7 @@ export default class WebGLRenderer {
     }
 
     renderMesh(object) {
-        var mf, material, materialFaceGroup;
+        var mf, materialFaceGroup;
 
 		// create separate VBOs per material
 		
@@ -432,7 +432,7 @@ export default class WebGLRenderer {
 
 			}
 
-			object.material.forEach(meshMaterial => {
+			object.materials.forEach(meshMaterial => {
 				if ( meshMaterial instanceof MeshFaceMaterial ) {
 
 					materialFaceGroup.material.forEach(material => {
@@ -441,7 +441,7 @@ export default class WebGLRenderer {
 
 				} else {
 
-					material = meshMaterial;
+					const material = meshMaterial;
 					this.renderBuffer( material, materialFaceGroup );
 
 				}
@@ -503,6 +503,7 @@ export default class WebGLRenderer {
 
     initGL() {
         let _gl
+		
 		try {
 
 			_gl = this._canvas.getContext( 'experimental-webgl', { antialias: true} );
@@ -516,8 +517,8 @@ export default class WebGLRenderer {
 
 		}
 
-		_gl.clearColor( 0, 0, 0, 1 );
-		_gl.clearDepth( 1 );
+		// _gl.clearColor( 0, 0, 0, 1 );
+		// _gl.clearDepth( 1 );
 
 		_gl.enable( _gl.DEPTH_TEST );
 		_gl.depthFunc( _gl.LEQUAL );

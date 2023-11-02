@@ -14,6 +14,7 @@ export default class Vector4 {
     this.y = y;
     this.z = z;
     this.w = w;
+
     return this;
 
   }
@@ -24,6 +25,7 @@ export default class Vector4 {
     this.y = v.y;
     this.z = v.z;
     this.w = v.w;
+
     return this;
 
   }
@@ -34,6 +36,7 @@ export default class Vector4 {
     this.y = v1.y + v2.y;
     this.z = v1.z + v2.z;
     this.w = v1.w + v2.w;
+
     return this;
 
   }
@@ -44,6 +47,7 @@ export default class Vector4 {
     this.y += v.y;
     this.z += v.z;
     this.w += v.w;
+
     return this;
 
   }
@@ -54,6 +58,7 @@ export default class Vector4 {
     this.y = v1.y - v2.y;
     this.z = v1.z - v2.z;
     this.w = v1.w - v2.w;
+
     return this;
 
   }
@@ -64,6 +69,7 @@ export default class Vector4 {
     this.y -= v.y;
     this.z -= v.z;
     this.w -= v.w;
+    
     return this;
 
   }

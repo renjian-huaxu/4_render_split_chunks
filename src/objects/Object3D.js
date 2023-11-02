@@ -4,7 +4,8 @@ import Matrix4 from '../core/Matrix4'
 
 export default class Object3D {
 
-    constructor(material) {
+    constructor() {
+
         this.position = new Vector3();
         this.rotation = new Vector3();
         this.scale = new Vector3( 1, 1, 1 );
@@ -17,9 +18,11 @@ export default class Object3D {
         this.screen = new Vector3();
     
         this.autoUpdateMatrix = true;
+
     }
 
     updateMatrix() {
+
       this.matrixPosition = Matrix4.translationMatrix( this.position.x, this.position.y, this.position.z );
 
       this.matrixRotation = Matrix4.rotationXMatrix( this.rotation.x );
@@ -31,5 +34,6 @@ export default class Object3D {
       this.matrix.copy( this.matrixPosition );
       this.matrix.multiplySelf( this.matrixRotation );
       this.matrix.multiplySelf( this.matrixScale );
+      
     }
 }
